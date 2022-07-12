@@ -1,3 +1,5 @@
+[Here](https://www.alexandresteinhauslin.dev/static/media/Alexandre%20Steinhauslin.dac3787681055a8e9303.pdf) is my resume
+
 # EthereumBalance
 A small app that shows ethereum balance and its transactions
 
