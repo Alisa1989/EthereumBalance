@@ -11,9 +11,10 @@ A small app that shows ethereum balance and its transactions
 
 # Setup
 To run this project, install it locally using npm.
+```
 $ Clone Repo [copy text="repo" content="https://github.com/Alisa1989/EthereumBalance.git"]
 $ npm install
 $ npm start
-
+```
 # License
 [MIT](https://github.com/Alisa1989/EthereumBalance/blob/main/LICENSE) Alexandre Steinhauslin
