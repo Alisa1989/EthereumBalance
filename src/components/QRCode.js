@@ -15,14 +15,17 @@ const QRCode = (props) => {
     <QRCodeCanvas
       id="qrCode"
       value={props.address}
-      size={300}
+      size={200}
       level={"H"}
+      includeMargin={true}
     />
   );
 
   return (
     <div className="qrcode__container">
-      <div ref={qrRef}>{qrcode}</div>
+      <div className="qrcode" ref={qrRef}>
+        {qrcode}
+      </div>
     </div>
   );
 };

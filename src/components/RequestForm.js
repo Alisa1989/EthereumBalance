@@ -9,12 +9,11 @@ const RequestForm = (props) => {
   const [walletData, setWalletData] = useState({
     balance: 0,
     transactions: [],
-    qrCode: []
-  })
+    qrCode: [],
+  });
 
   const handleChanges = (e) => {
     e.persist();
-    console.log("input changed!", e.target.value);
     const newFormData = {
       ...formState,
       [e.target.name]: e.target.value,
@@ -22,26 +21,25 @@ const RequestForm = (props) => {
     setFormState(newFormData);
   };
   useEffect(() => {
-      axios
+    axios
       .get(
-          `https://api.etherscan.io/api?module=account&action=balance&address=${formState.walletAddress}&tag=latest&apikey=92PH1UZI33IQCP5VDMH4YEG7PRR4ZQMC27`
-          )
-          .then((res) => {
-              setWalletData({
-                  ...walletData,
-                  balance: res.data.result
-                })
-                console.log("address", formState.walletAddress);
-            })
-            .catch((err) => {
-                console.log("res", err);
-            });
-        const returnAddress = formState.walletAddress
-        props.setAddress(returnAddress);
-    }, [formState.walletAddress]);
+        `https://api.etherscan.io/api?module=account&action=balance&address=${formState.walletAddress}&tag=latest&apikey=92PH1UZI33IQCP5VDMH4YEG7PRR4ZQMC27`
+      )
+      .then((res) => {
+        setWalletData({
+          ...walletData,
+          balance: res.data.result,
+        });
+      })
+      .catch((err) => {
+        console.log("res", err);
+      });
+    const returnAddress = formState.walletAddress;
+    props.setAddress(returnAddress);
+  }, [formState.walletAddress]);
 
   return (
-    <div>
+    <div className="requestform__container">
       <label htmlFor="walletAddress">
         <input
           id="walletAddress"
@@ -49,7 +47,7 @@ const RequestForm = (props) => {
           type="text"
           onChange={handleChanges}
           value={formState.walletAddress ?? ""}
-          palceholder="copy wallet address here"
+          placeholder="Copy Wallet Address Here"
         />
       </label>
       <h2>Balance {walletData.balance || 0} Eth</h2>
