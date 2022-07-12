@@ -7,7 +7,7 @@ import History from "./History";
 
 function Dashboard() {
 
-  const [address, setAddress] = useState("")
+  const [address, setAddress] = useState("0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae")
 
   return (
     <div className="Dashboard">
